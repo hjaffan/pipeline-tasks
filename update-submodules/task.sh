@@ -1,5 +1,6 @@
 #!/bin/bash
 
+ROOT_DIR=$PWD
 cp -r source/* full-source/
 function sub_update {
     git submodule sync
@@ -8,9 +9,11 @@ function sub_update {
     git clean -ffd
 }
 
-sub_update
+pushd ${ROOT_DIR}/full-source
+    sub_update
+popd
 
-pushd full-source/src/$SRC_PATH
+pushd ${ROOT_DIR}/full-source/src/$SRC_PATH
     git checkout $BRANCH_NAME
     sub_update
 popd
