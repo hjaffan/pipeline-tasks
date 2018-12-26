@@ -1,0 +1,13 @@
+platform: linux
+
+inputs:
+- name: source
+
+params:
+  SRC_PATH:
+  BRANCH_NAME:
+
+outputs:
+- name: full-source
+run:
+  path: pipeline-tasks/update-submodules/task.sh
