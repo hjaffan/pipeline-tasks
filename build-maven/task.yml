@@ -3,17 +3,19 @@ platform: linux
 image_resource:
   type: docker-image
   source:
-    repository: hjaffan/concourse-docker
+    repository: maven
+    tag: 3-jdk-11
 
 inputs:
   - name: source
 
-
+params:
+  SRC_PATH:
 
 run:
   path: sh
   args:
   - -exc
   - |
-     cd source/
-     dotnet build
+     cd source/${SRC_PATH}
+     mvn build

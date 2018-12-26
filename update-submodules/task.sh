@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ROOT_DIR=$PWD
-cp -r source/* full-source/
+cp -r source/. full-source/
 function sub_update {
     git submodule sync
     git submodule foreach --recursive 'git submodule sync; git clean -d --force --force'
