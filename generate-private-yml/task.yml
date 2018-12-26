@@ -5,12 +5,15 @@ image_resource:
   source:
     repository: hjaffan/concourse-docker
 
+inputs:
+  - name: source
+
 params:
   AWS_ACCESS_KEY_ID:
   AWS_SECRET_ACCESS_KEY:
 
 outputs:
-  - name: config
+  - name: full-source
 
 run:
   path: pipeline-tasks/generate-private-yml/task.sh

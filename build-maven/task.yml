@@ -12,10 +12,13 @@ inputs:
 params:
   SRC_PATH:
 
+outputs:
+  - name: full-source
+  
 run:
   path: sh
   args:
   - -exc
   - |
-     cd source/${SRC_PATH}
+     cd source/src/${SRC_PATH}
      mvn build
