@@ -7,6 +7,7 @@ image_resource:
   
 inputs:
 - name: source
+- name: pipeline-tasks
 
 params:
   SRC_PATH:
