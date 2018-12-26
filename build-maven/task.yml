@@ -14,11 +14,11 @@ params:
 
 outputs:
   - name: full-source
-  
+
 run:
   path: sh
   args:
   - -exc
   - |
      cd source/src/${SRC_PATH}
-     mvn build
+     mvn package
