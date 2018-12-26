@@ -1,0 +1,23 @@
+platform: linux
+
+image_resource:
+  type: docker-image
+  source:
+    repository: nimmis/apache-php7
+
+inputs:
+  - name: source
+
+params:
+  SRC_PATH:
+
+outputs:
+  - name: full-source
+
+run:
+  path: sh
+  args:
+  - -exc
+  - |
+     cd source/src/${SRC_PATH}
+     mvn package
