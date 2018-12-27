@@ -21,4 +21,4 @@ run:
   - -exc
   - |
      cd source/src/${SRC_PATH}
-     mvn package
+     mvn verify
