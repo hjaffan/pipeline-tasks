@@ -10,7 +10,7 @@ inputs:
   - name: source
 
 params:
-  MAVEN_OPTS: "-Xms256m -Xmx512m"
+  MAVEN_OPTS: "-Xms256m -Xmx756m"
   SRC_PATH:
 
 outputs:
