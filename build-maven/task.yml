@@ -10,6 +10,7 @@ inputs:
   - name: source
 
 params:
+  MAVEN_OPTS: "-Xms256m -Xmx512m"
   SRC_PATH:
 
 outputs:
@@ -20,5 +21,6 @@ run:
   args:
   - -exc
   - |
+     
      cd source/src/${SRC_PATH}
      mvn verify
