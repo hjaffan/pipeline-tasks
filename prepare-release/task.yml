@@ -1,0 +1,31 @@
+platform: linux
+
+image_resource:
+  type: docker-image
+  source:
+    repository: hjaffan/pipeline-tasks
+    tag: latest
+
+inputs:
+  - name: source_code
+  - name: release_code
+
+params:
+  RELEASE_SRC_PACKAGE:
+  ARTIFACT_NAME:
+  ARTIFACT_EXT:
+  
+
+outputs:
+  - name: release
+
+run:
+  path: bash
+  args: 
+  - "-c"
+  - |
+     pushd source_code
+       tar -zxvf ${ARTIFACT_NAME}.${ARTIFACT_EXT} -c ../release_code/src/${RELEASE_SRC_PACKAGE}
+     popd
+     cp -r release_code release
+
