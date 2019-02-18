@@ -22,5 +22,6 @@ run:
   - -exc
   - |
      
-     cd source/src/${SRC_PATH}
-     mvn verify
+     pushd source
+       mvn package
+     popd
