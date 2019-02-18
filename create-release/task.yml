@@ -1,0 +1,26 @@
+platform: linux
+
+image_resource:
+  type: docker-image
+  source:
+    repository: hjaffan/pipeline-tasks
+    tag: latest
+
+inputs:
+  - name: release
+
+params:
+  RELEASE_NAME:
+  
+
+outputs:
+  - name: compiled-release
+
+run:
+  path: bash
+  args: 
+  - "-c"
+  - |
+     pushd release
+       bosh create-release --name=${RELEASE_NAME} --timestamp-version --version=1.0.0 --force --tarball=../compiled-release/${RELEASE_NAME}.tgz
+     popd
