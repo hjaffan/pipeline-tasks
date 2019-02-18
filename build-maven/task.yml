@@ -11,10 +11,9 @@ inputs:
 
 params:
   MAVEN_OPTS: "-Xms256m -Xmx756m"
-  SRC_PATH:
 
 outputs:
-  - name: full-source
+  - name: compile
 
 run:
   path: sh
@@ -23,5 +22,5 @@ run:
   - |
      
      pushd source
-       mvn package
+       mvn package -DoutputDirectory=../compile
      popd
