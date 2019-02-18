@@ -22,6 +22,6 @@ run:
   - |
      
      pushd binaries
-     tar -zcvf . ../compressed/${ARTIFACT_NAME}.tgz
+     tar -zcvf ../compressed/${ARTIFACT_NAME}.tgz .
      popd
 
