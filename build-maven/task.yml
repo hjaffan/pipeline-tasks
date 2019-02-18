@@ -21,6 +21,6 @@ run:
   - -exc
   - |
      
-     pushd source
-       mvn package -DoutputDirectory=../compile
-     popd
+     cd source
+     mvn package -DoutputDirectory=../compile
+
