@@ -23,5 +23,5 @@ run:
      
      cd source
      mvn package
-     mv source/target compile
+     mv target ../compile
 
