@@ -7,8 +7,8 @@ image_resource:
     tag: latest
 
 inputs:
-  - name: source_code
-  - name: release_code
+  - name: source-code
+  - name: release-code
 
 params:
   RELEASE_SRC_PACKAGE:
@@ -24,8 +24,8 @@ run:
   args: 
   - "-c"
   - |
-     pushd source_code
-       tar -zxvf ${ARTIFACT_NAME}.${ARTIFACT_EXT} -c ../release_code/src/${RELEASE_SRC_PACKAGE}
+     pushd source-code
+       tar -zxvf ${ARTIFACT_NAME}.${ARTIFACT_EXT} -c ../release-code/src/${RELEASE_SRC_PACKAGE}
      popd
-     cp -r release_code release
+     cp -r release-code release
 
