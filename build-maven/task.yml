@@ -22,5 +22,6 @@ run:
   - |
      
      cd source
-     mvn package -DoutputDirectory=../compile
+     mvn package
+     mv source/target compile
 
