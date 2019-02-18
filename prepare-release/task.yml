@@ -27,5 +27,5 @@ run:
      pushd source-code
        tar -zxvf ${ARTIFACT_NAME}.${ARTIFACT_EXT} -C ../release-code/src/${RELEASE_SRC_PACKAGE}
      popd
-     cp -r release-code/ release
+     cp -a release-code/. release
 
