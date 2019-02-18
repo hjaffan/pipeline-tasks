@@ -16,7 +16,7 @@ outputs:
   - name: compressed
 
 run:
-  path: sh
+  path: bash
   args:
   - -exc
   - |
