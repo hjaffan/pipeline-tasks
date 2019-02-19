@@ -10,7 +10,7 @@ inputs:
 
 
 outputs:
-  - name: full-source
+  - name: compile
 
 run:
   path: bash
@@ -20,4 +20,4 @@ run:
      cd source
      composer.phar install
      cd ../
-     cp -a source/. full-source
+     cp -a source/. compile
