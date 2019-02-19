@@ -3,8 +3,8 @@ platform: linux
 image_resource:
   type: docker-image
   source:
-    repository: maven
-    tag: 3-jdk-11
+    repository: hjaffan/pipeline-tasks
+    tag: latest
 
 inputs:
   - name: bosh-release
@@ -15,12 +15,12 @@ params:
   BOSH_CLIENT:
   BOSH_CLIENT_SECRET:
   BOSH_ALL_PROXY:
+  RELEASE_NAME:
 
 
 run:
-  path: sh
+  path: bash
   args:
-  - -exc
+  - -c
   - |
-     file_name=$(ls bosh-release | grep release)
-     bosh upload-release -p bosh-release/${file_name}
+     bosh upload-release bosh-release/${RELEASE_NAME}
