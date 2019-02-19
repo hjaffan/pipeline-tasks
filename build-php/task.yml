@@ -3,7 +3,8 @@ platform: linux
 image_resource:
   type: docker-image
   source:
-    repository: nimmis/apache-php7
+    repository: php
+    tag: 7.1-apache
 
 inputs:
   - name: source
