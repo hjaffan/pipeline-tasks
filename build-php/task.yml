@@ -8,16 +8,16 @@ image_resource:
 inputs:
   - name: source
 
-params:
-  SRC_PATH:
 
 outputs:
   - name: full-source
 
 run:
-  path: sh
+  path: bash
   args:
   - -exc
   - |
-     cd source/src/${SRC_PATH}
+     cd source
      composer.phar install
+     cd ../
+     cp -a source/. full-source
