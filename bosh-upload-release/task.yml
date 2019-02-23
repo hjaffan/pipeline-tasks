@@ -26,7 +26,7 @@ run:
   args:
   - -c
   - |
-     echo $PROXY_KEY > key.pem
+     echo "$PROXY_KEY" > key.pem
      chmod 400 key.pem
      BOSH_ALL_PROXY=ssh+socks5://${PROXY_USER}@${PROXY_HOST}:${PROXY_PORT}?private-key=key.pem
      bosh upload-release bosh-release/${RELEASE_NAME}.tgz
