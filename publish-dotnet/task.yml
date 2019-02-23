@@ -23,8 +23,8 @@ run:
   args:
   - -exc
   - |
-     git clone odoo-integration-dotnet-source source/lib/odoo-integration-dotnet-source
-     git clone xmlrpc-source source/lib/xmlrpc-source
+     git clone odoo-integration-dotnet-source source/lib/odoo-integration-dotnet
+     git clone xmlrpc-source source/lib/xmlrpc
      pushd source/src/${SOURCE_NAME}
        dotnet publish -c ${PUBLISH_TYPE} -o ../../../compile
      popd
