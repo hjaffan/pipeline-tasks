@@ -8,6 +8,8 @@ image_resource:
 
 inputs:
   - name: source
+  - name: odoo-integration-dotnet-source
+  - name: xmlrpc-source
 
 params:
   PUBLISH_TYPE: Release
@@ -17,11 +19,12 @@ outputs:
   - name: compile
 
 run:
-  path: sh
+  path: bash
   args:
   - -exc
   - |
-     
+     git clone odoo-integration-dotnet-source source/lib/odoo-integration-dotnet-source
+     git clone xmlrpc-source source/lib/xmlrpc-source
      pushd source/src/${SOURCE_NAME}
        dotnet publish -c ${PUBLISH_TYPE} -o ../../../compile
      popd
