@@ -14,7 +14,10 @@ params:
   BOSH_CA_CERT:
   BOSH_CLIENT:
   BOSH_CLIENT_SECRET:
-  BOSH_ALL_PROXY:
+  PROXY_USER:
+  PROXY_HOST:
+  PROXY_PORT:
+  PROXY_KEY:
   RELEASE_NAME:
 
 
@@ -23,4 +26,7 @@ run:
   args:
   - -c
   - |
-     bosh upload-release bosh-release/${RELEASE_NAME}
+     echo $PROXY_KEY > key.pem
+     chmod 400 key.pem
+     BOSH_ALL_PROXY=ssh+socks5://${PROXY_USER}@${PROXY_HOST}:${PROXY_PORT}?private-key=key.pem
+     bosh upload-release bosh-release/${RELEASE_NAME}.tgz
