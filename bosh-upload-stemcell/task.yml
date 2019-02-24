@@ -29,4 +29,4 @@ run:
      ${PROXY_KEY}
      EOL
      chmod 400 key.pem
-     BOSH_ALL_PROXY=ssh+socks5://${PROXY_USER}@${PROXY_HOST}:${PROXY_PORT}?private-key=key.pem bosh upload-stemcell bosh-release/${RELEASE_NAME}.tgz
+     BOSH_ALL_PROXY=ssh+socks5://${PROXY_USER}@${PROXY_HOST}:${PROXY_PORT}?private-key=key.pem bosh upload-stemcell bosh-stemcell/stemcell.tgz
