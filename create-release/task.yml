@@ -22,7 +22,7 @@ run:
   args: 
   - "-c"
   - |
-     
+     version=$(cat version/version)
      pushd release
-       bosh create-release --name=${RELEASE_NAME} --version=${VERSION}--force --tarball=../compiled-release/${RELEASE_NAME}.tgz
+       bosh create-release --name=${RELEASE_NAME} --version=${version}--force --tarball=../compiled-release/${RELEASE_NAME}.tgz
      popd
