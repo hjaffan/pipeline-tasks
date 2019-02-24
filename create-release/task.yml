@@ -8,10 +8,10 @@ image_resource:
 
 inputs:
   - name: release
+  - name: version
 
 params:
   RELEASE_NAME:
-  VERSION:
   
 
 outputs:
@@ -22,6 +22,7 @@ run:
   args: 
   - "-c"
   - |
+     
      pushd release
        bosh create-release --name=${RELEASE_NAME} --version=${VERSION}--force --tarball=../compiled-release/${RELEASE_NAME}.tgz
      popd
