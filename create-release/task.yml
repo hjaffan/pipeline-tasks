@@ -11,6 +11,7 @@ inputs:
 
 params:
   RELEASE_NAME:
+  VERSION:
   
 
 outputs:
@@ -22,5 +23,5 @@ run:
   - "-c"
   - |
      pushd release
-       bosh create-release --name=${RELEASE_NAME} --timestamp-version --version=1.0.0 --force --tarball=../compiled-release/${RELEASE_NAME}.tgz
+       bosh create-release --name=${RELEASE_NAME} --version=${VERSION}--force --tarball=../compiled-release/${RELEASE_NAME}.tgz
      popd
