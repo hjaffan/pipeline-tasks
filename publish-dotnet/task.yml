@@ -13,6 +13,7 @@ inputs:
 
 params:
   PUBLISH_TYPE: Release
+  USER: bower
   SOURCE_NAME:
 
 outputs:
@@ -25,6 +26,8 @@ run:
   - |
      sudo git clone odoo-integration-dotnet-source source/lib/odoo-integration-dotnet
      sudo git clone xmlrpc-source source/lib/xmlrpc
+     sudo chown ${USER}:${USER} -R source/
+     sudo chown ${USER}:${USER} -R compile/
      pushd source/src/${SOURCE_NAME}
        dotnet publish -c ${PUBLISH_TYPE} -o ../../../compile
      popd
