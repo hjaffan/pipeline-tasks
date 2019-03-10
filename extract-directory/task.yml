@@ -1,0 +1,20 @@
+platform: linux
+
+image_resource:
+  type: docker-image
+  source:
+    repository: hjaffan/pipeline-tasks
+    tag: latest
+
+inputs:
+  - name: pipeline-tasks
+  - name: source
+
+params:
+  DIR_NAME:
+
+outputs:
+  - name: extract-directory
+
+run:
+  path: pipeline-tasks/extract-directory/task.sh
