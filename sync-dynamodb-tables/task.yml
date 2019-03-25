@@ -1,0 +1,18 @@
+---
+platform: linux
+
+inputs:
+- name: pipeline-tasks
+
+params:
+  SOURCE_AWS_KEY:
+  SOURCE_AWS_SECRET:
+  SOURCE_TABLE:
+  SOURCE_REGION:
+  DEST_AWS_KEY:
+  DEST_AWS_SECRET:
+  DEST_TABLE:
+  DEST_REGION:
+
+run:
+  path: pipeline-tasks/sync-dynamodb-tables/task.py
