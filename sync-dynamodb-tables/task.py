@@ -33,9 +33,10 @@ dynamoresponse = dynamopaginator.paginate(
     ReturnConsumedCapacity='NONE',
     ConsistentRead=True
 )
-# for page in dynamoresponse:
-#     for item in page['Items']:
-#         dynamotargetclient.put_item(
-#             TableName=targettabname,
-#             Item=item
-#         )
+for page in dynamoresponse:
+    for item in page['Items']:
+        print(item)
+        # dynamotargetclient.put_item(
+        #     TableName=targettabname,
+        #     Item=item
+        # )
