@@ -33,9 +33,12 @@ dynamoresponse = dynamopaginator.paginate(
     ReturnConsumedCapacity='NONE',
     ConsistentRead=True
 )
+count = 0
 for page in dynamoresponse:
     for item in page['Items']:
+        count = count + 1
         dynamotargetclient.put_item(
             TableName=targettabname,
             Item=item
         )
+print("Updated {} records.".format(count))
