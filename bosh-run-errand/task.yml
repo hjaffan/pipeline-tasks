@@ -27,5 +27,6 @@ run:
      cat >> key.pem <<EOL
      ${PROXY_KEY}
      EOL
+     echo "running errand"
      chmod 400 key.pem
      BOSH_ALL_PROXY=ssh+socks5://${PROXY_USER}@${PROXY_HOST}:${PROXY_PORT}?private-key=key.pem bosh run-errand ${ERRAND_NAME}
