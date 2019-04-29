@@ -6,9 +6,6 @@ image_resource:
     repository: hjaffan/pipeline-tasks
     tag: latest
 
-inputs:
-  - name: bosh-release
-
 params:
   BOSH_ENVIRONMENT: 
   BOSH_CA_CERT:
